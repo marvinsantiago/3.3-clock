@@ -17,11 +17,11 @@ body {
   max-width: 40%;
   margin: auto; }
 
-.time {
+#time {
   color: white;
   text-align: center;
   font-family: GillSans, HelveticaNeue, Helvetica, sans-serif;
-  font-size: 8em;
+  font-size: 1em;
   margin: auto; }
 
 .rad {

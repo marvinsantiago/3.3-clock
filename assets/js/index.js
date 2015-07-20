@@ -19,10 +19,13 @@ hours = date.getHours();
     var currentsec = hours + ":" + minutes + ":" + 0 + seconds;
 
     if (minutes < 10 && seconds < 10) {
+        console.log(currenth);
         timeEl.innerHTML = currenth;
     } else if (minutes < 10){
+        console.log(currentmin);
         timeEl.innerHTML = currentmin;
     } else if (seconds < 10) {
+        console.log(currentsec);
         timeEl.innerHTML = currentsec;
     } else {
         timeEl.innerHTML = current;

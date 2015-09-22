@@ -1,0 +1,22 @@
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50%;
+    margin: auto;
+}
+#time {
+    color: white;
+    margin: auto;
+    font-family:  GillSans, HelveticaNeue, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 9em;
+}
+#timer-bar {
+    border: 3px solid white;
+    height: 1px;
+    width: 100%;
+    margin: auto;
+    transition: width 1s;
+}

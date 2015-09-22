@@ -1,35 +1,44 @@
+var content = document.getElementsByTagName('body')[0];
+var time = document.getElementById('time');
+var timer = document.getElementById('timer-bar');
 
-var timeEl = document.getElementById('time');
+var colorChange = function(time, mult) {
+    var change = time * 500 / mult;
+    change = parseInt(change);
+    return change.toString(16);
+};
 
-var date;
-var minutes;
-var seconds;
-var hours;
-
-window.setInterval(function() {
-
-date = new Date();
-minutes = date.getMinutes();
-seconds = date.getSeconds();
-hours = date.getHours();
-
+window.setInterval ( function() {
+    var date = new Date ();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
     var current = hours + ":" + minutes + ":" + seconds;
-    var currenth = hours + ":" + 0 + minutes + ":" + 0 + seconds;
-    var currentmin = hours + ":" + 0 + minutes + ":" + seconds;
-    var currentsec = hours + ":" + minutes + ":" + 0 + seconds;
+    var current10 = hours + ":" + 0 + minutes + ":" + 0 + seconds;
+    var current10min = hours + ":" + 0 + minutes + ":" + seconds;
+    var current10sec = hours + ":" + minutes + ":" + 0 + seconds;
 
     if (minutes < 10 && seconds < 10) {
-        console.log(currenth);
-        timeEl.innerHTML = currenth;
-    } else if (minutes < 10){
-        console.log(currentmin);
-        timeEl.innerHTML = currentmin;
-    } else if (seconds < 10) {
-        console.log(currentsec);
-        timeEl.innerHTML = currentsec;
-    } else {
-        timeEl.innerHTML = current;
-    }
-    }, 1000 );
+            console.log(current10);
+            time.innerHTML = current10;
+        } else if (minutes < 10){
+            console.log(current10min);
+            time.innerHTML = current10min;
+        } else if (seconds < 10) {
+            console.log(current10sec);
+            time.innerHTML = current10sec;
+        } else {
+            console.log(current);
+            time.innerHTML = current;
+        }
 
+        var percent = seconds / 60;
 
+        console.log(percent);
+        timer.style.width = percent * 100 + '%';
+
+        var color = '#' + colorChange(seconds, 60);
+        content.style.background = color;
+        console.log(color);
+
+}, 1000 );
